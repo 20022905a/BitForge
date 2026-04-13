@@ -17,8 +17,9 @@ const twofaRoutes     = require('./routes/twofa');
 
 const app = express();
 
+// Allow all origins (fixes Vercel deployment)
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  origin: true,
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
