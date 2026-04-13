@@ -39,12 +39,16 @@ const userSchema = new mongoose.Schema({
   kycVerified:   { type: Boolean, default: false },
   kycStatus:     { type: String, enum: ['none', 'under_review', 'approved', 'rejected'], default: 'none' },
   suspended:     { type: Boolean, default: false },
+  twoFAEnabled:  { type: Boolean, default: false },
+  twoFAVerified: { type: Boolean, default: false },
   role:          { type: String, enum: ['user', 'admin'], default: 'user' },
 
   // Portfolio
   cashBalanceUSD: { type: Number, default: 0 },
   holdings:       [holdingSchema],
   transactions:   [transactionSchema],
+
+  watchlist: [{ type: String }],
 
   // Metadata
   createdAt:  { type: Date, default: Date.now },

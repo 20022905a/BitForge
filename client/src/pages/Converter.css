@@ -1,0 +1,16 @@
+.converter-layout { display:grid; grid-template-columns:1fr 300px; gap:20px; align-items:start; }
+.converter-card { padding:28px; }
+.converter-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:8px; }
+.converter-swap { display:flex; justify-content:center; margin:12px 0; }
+.swap-btn { width:40px; height:40px; border-radius:50%; background:var(--bg); border:1.5px solid var(--border); font-size:18px; cursor:pointer; transition:all 0.15s; display:flex; align-items:center; justify-content:center; }
+.swap-btn:hover { background:var(--blue-light); border-color:var(--blue); }
+.converter-result { display:flex; align-items:center; gap:16px; background:var(--bg); border-radius:var(--radius-lg); padding:20px; margin-bottom:14px; }
+.result-from, .result-to { flex:1; }
+.result-label { display:block; font-size:11px; font-weight:600; color:var(--text3); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:6px; }
+.result-amount { display:block; font-size:22px; font-weight:800; font-family:var(--font-display); color:var(--text); }
+.result-crypto { color:var(--blue); }
+.result-sym { font-size:14px; color:var(--text2); font-weight:600; margin-top:2px; display:block; }
+.result-arrow { font-size:24px; color:var(--text3); flex-shrink:0; }
+.converter-rate { text-align:center; font-size:12px; color:var(--text3); padding:10px; background:var(--bg); border-radius:var(--radius); }
+.coin-detail-card { padding:20px; }
+@media(max-width:900px) { .converter-layout { grid-template-columns:1fr; } .converter-row { grid-template-columns:1fr; } }

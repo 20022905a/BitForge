@@ -123,3 +123,68 @@ input::placeholder { color: var(--text3); }
 .empty-state .empty-icon { font-size: 40px; margin-bottom: 14px; opacity: 0.4; }
 .empty-state h3 { font-size: 17px; color: var(--text); margin-bottom: 8px; }
 .empty-state p { font-size: 14px; color: var(--text2); }
+
+/* ── Dark mode ─────────────────────────────────────────── */
+[data-theme="dark"] {
+  --blue:        #4A90D9;
+  --blue-dark:   #3375BB;
+  --blue-light:  #1a2a3d;
+  --blue-mid:    #2a3f5a;
+  --green:       #53AE94;
+  --green-light: #1a2e28;
+  --green-dark:  #3D8C77;
+  --bg:          #0d1117;
+  --bg2:         #161b22;
+  --white:       #1c2128;
+  --surface:     #1c2128;
+  --surface2:    #21262d;
+  --border:      #30363d;
+  --border2:     #40464e;
+  --text:        #e6edf3;
+  --text2:       #8b949e;
+  --text3:       #484f58;
+  --red:         #f85149;
+  --red-light:   #2a1a1a;
+  --orange:      #d29922;
+  --orange-light:#2a2010;
+  --up:          #3fb950;
+  --up-light:    #1a2e1a;
+  --down:        #f85149;
+  --down-light:  #2a1a1a;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.3);
+  --shadow:      0 4px 16px rgba(0,0,0,0.4);
+  --shadow-blue: 0 4px 20px rgba(74,144,217,0.2);
+}
+
+/* ── Mobile responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main-content { padding: 16px; }
+  .field-row { grid-template-columns: 1fr; }
+  .field-3 { grid-template-columns: 1fr; }
+}
+
+/* ── Mobile nav bar ────────────────────────────────────── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+}
+@media (max-width: 768px) {
+  .mobile-nav { display: flex; justify-content: space-around; }
+  .main-content { padding-bottom: 80px; }
+}
+.mobile-nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 4px 12px; border-radius: var(--radius); border: none;
+  background: none; color: var(--text3); font-size: 10px; font-weight: 600;
+  cursor: pointer; font-family: var(--font-display); transition: color 0.15s;
+  text-decoration: none;
+}
+.mobile-nav-item.active { color: var(--blue); }
+.mobile-nav-item span:first-child { font-size: 20px; }

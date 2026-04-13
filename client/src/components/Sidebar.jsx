@@ -1,12 +1,15 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { useTheme } from '../context/ThemeContext'
 import './Sidebar.css'
 
 const NAV = [
   { to: '/dashboard',    icon: '▦', label: 'Dashboard' },
   { to: '/markets',      icon: '◈', label: 'Markets' },
   { to: '/wallet',       icon: '◉', label: 'Wallet' },
+  { to: '/portfolio',    icon: '◎', label: 'Portfolio' },
   { to: '/buy',          icon: '+', label: 'Buy Crypto' },
+  { to: '/converter',    icon: '⇄', label: 'Converter' },
   { to: '/kyc',          icon: '✦', label: 'Verification' },
   { to: '/transactions', icon: '↕', label: 'Activity' },
   { to: '/settings',     icon: '⚙', label: 'Settings' },
@@ -14,6 +17,7 @@ const NAV = [
 
 export default function Sidebar() {
   const { user, logout } = useAuth()
+  const { dark, toggle } = useTheme()
   const navigate = useNavigate()
   const handleLogout = () => { logout(); navigate('/') }
   const isAdmin = user?.role === 'admin'
@@ -49,6 +53,13 @@ export default function Sidebar() {
           </NavLink>
         )}
       </nav>
+
+      <div className="sidebar-theme">
+        <button className="theme-toggle" onClick={toggle}>
+          <span>{dark ? '☀️' : '🌙'}</span>
+          <span>{dark ? 'Light mode' : 'Dark mode'}</span>
+        </button>
+      </div>
 
       <div className="sidebar-footer">
         <div className="user-info">
