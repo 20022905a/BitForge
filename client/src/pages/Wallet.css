@@ -1,0 +1,10 @@
+.wallet-total { background:var(--blue); border:none; padding:28px; margin-bottom:16px; }
+.wallet-total-inner { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:20px; }
+.wallet-actions { display:flex; gap:12px; }
+.wallet-action-btn { display:flex; flex-direction:column; align-items:center; gap:5px; background:rgba(255,255,255,0.15); border:none; color:white; border-radius:var(--radius-lg); padding:12px 18px; font-size:12px; font-weight:600; cursor:pointer; transition:background 0.15s; font-family:var(--font-display); min-width:56px; }
+.wallet-action-btn span:first-child { font-size:20px; }
+.wallet-action-btn:hover { background:rgba(255,255,255,0.25); }
+.asset-row { display:flex; align-items:center; gap:14px; padding:14px 18px; border-top:1px solid var(--border); transition:background 0.12s; }
+.asset-row:hover { background:var(--bg); }
+.asset-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; flex-shrink:0; font-family:var(--font-display); }
+.asset-info { flex:1; min-width:0; }

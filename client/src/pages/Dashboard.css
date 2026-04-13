@@ -1,0 +1,124 @@
+.kyc-banner { display:flex; align-items:center; gap:14px; background:var(--orange-light); border:1px solid #FED7AA; border-radius:var(--radius-lg); padding:14px 18px; margin-bottom:20px; font-size:13px; }
+.kyc-banner strong { color:var(--text); }
+.kyc-banner > span { font-size:20px; flex-shrink:0; }
+.kyc-banner > div { flex:1; color:var(--text2); }
+.dash-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px; gap:12px; flex-wrap:wrap; }
+.dash-header h1 { font-size:24px; font-weight:800; }
+.port-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:28px; }
+.port-total { background:var(--blue); border-color:transparent; }
+.port-total .port-label { color:rgba(255,255,255,0.7); }
+.port-total .port-value { color:white; }
+.port-total .port-sub { color:rgba(255,255,255,0.6); }
+.port-card {}
+.port-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--text3); margin-bottom:10px; }
+.port-value { font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text); line-height:1; }
+.port-sub { font-size:11px; color:var(--text3); margin-top:8px; }
+.holdings-list { display:flex; flex-direction:column; gap:8px; }
+.holding-row { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; }
+.holding-sym { font-family:var(--font-display); font-weight:700; font-size:15px; }
+.holding-amt { font-size:12px; color:var(--text2); margin-top:2px; }
+.holding-right { display:flex; align-items:center; gap:10px; }
+.holding-val { font-size:15px; font-weight:600; font-family:var(--font-display); }
+.mkt-head { display:grid; grid-template-columns:1fr 130px 80px; padding:10px 18px; font-size:11px; font-weight:600; color:var(--text3); text-transform:uppercase; letter-spacing:0.06em; border-bottom:1px solid var(--border); }
+.mkt-row { display:grid; grid-template-columns:1fr 130px 80px; align-items:center; padding:12px 18px; border-top:1px solid var(--border); transition:background 0.12s; }
+.mkt-row:hover { background:var(--bg); }
+.mkt-asset { display:flex; align-items:center; gap:10px; }
+.mkt-name { font-weight:600; font-size:13px; }
+.mkt-sym2 { font-size:11px; color:var(--text3); }
+
+/* Crypto cards grid */
+.crypto-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.crypto-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.18s;
+  box-shadow: var(--shadow-sm);
+}
+.crypto-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.crypto-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.crypto-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crypto-card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.crypto-card-sym {
+  font-size: 11px;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.crypto-card-price {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 3px;
+  font-variant-numeric: tabular-nums;
+}
+.crypto-card-cap {
+  font-size: 11px;
+  color: var(--text3);
+  margin-bottom: 14px;
+}
+.crypto-card-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-display);
+  transition: opacity 0.15s;
+  opacity: 0.9;
+}
+.crypto-card:hover .crypto-card-btn { opacity: 1; }
+
+/* Loading skeletons */
+.crypto-cards-loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.crypto-card-skeleton {
+  height: 200px;
+  background: linear-gradient(90deg, var(--bg) 25%, var(--bg2) 50%, var(--bg) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
